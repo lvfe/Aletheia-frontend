@@ -1,0 +1,66 @@
+body {
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+#popup {
+	min-width: 500px;
+	width: 500px;
+	min-height: 10px;
+	height: 300px;
+	margin: 18px;
+/*	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;*/
+}
+
+.green {
+	color: green;
+}
+
+.addNewCityForm {
+	margin-bottom: 20px;
+}
+
+.city-name {
+	padding: 2px 10px;
+}
+
+.cities-list span {
+	display: inline-block;
+}
+.cities-list span:not(:last-child) {
+	padding-right: 10px;
+}
+.cities-list .name {
+	min-width: 150px;
+	padding-right: 15px !important;
+}
+.cities-list .weather {
+	text-align: right;
+	min-width: 50px;
+}
+
+.cities-list .delete-btn {
+	cursor: pointer;
+	text-decoration: underline;
+	color: #00f;
+	display: none;
+}
+.delete-btn:hover {
+	text-decoration: none;
+}
+
+.cities-list > li:hover .delete-btn {
+	display: inline-block;
+}
+
+
+#output {
+	color: #f00;
+	display: inline-block;
+	padding: 4px 10px;
+	/*border: 1px solid #f00;*/
+	/*border-radius: 3px;*/
+}

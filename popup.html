@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="Alethia" ng-csp>
+<head>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/popup.css">
+	
+	<script src="js/lib/async.min.js"></script>
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/app/app.js"></script>
+	<script src="js/app/services/retrieveNewsService.js"></script>
+	<script src="js/app/popup.js"></script>
+</head>
+<body id="popup">
+	<header>
+		<h1>Aletheia</h1>
+	</header>
+	<div ng-controller="PageController">
+		<form class="addNewLinkForm">
+			<input type="text" ng-model="link" class="url-name" placeholder="link url"/>
+			<button ng-click="addNews(link)">add</button>
+			<span id="output" ng-hide="true">{{output}}</span>
+		</form>
+		<!-- response start -->
+		<div class="keywords">
+			Keyowrds
+			<ul class="cities-list" ng-repeat="keyword in response.keywords">
+				<li>
+					<span class="name">{{keyword}}</span>
+				</li>
+			</ul>
+		</div>
+		<div class="relevant">
+			Relevent Stories
+			<ul class="cities-list" ng-repeat="relevence in response.relevant">
+				<li>
+					<span class="name">{{relevence.url}}</span>
+					<span class="name">{{relevance.title}}</span>
+				</li>
+			</ul>
+		</div>
+		<div class="collaboration">
+			We could collaborate this
+			<ul class="cities-list" ng-repeat="collaboration in response.collaborate">
+				<li>
+					<span class="name">{{collaboration.evidence}}</span>
+					<span class="name">{{collaboration.title}}</span>
+					<span class="name">{{collaboration.url}}</span>
+				</li>
+			</ul>
+		<div>
+		<div class="content">
+			Content
+			<ul class="cities-list" ng-repeat="content in response.content">
+				<li>
+					<span class="name">{{content}}</span>
+				</li>
+			</ul>
+		</div>
+		<!-- response end -->
+	</div>
+</body>
+</html>
